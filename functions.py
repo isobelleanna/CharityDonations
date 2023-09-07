@@ -8,7 +8,7 @@ def get_supporters():
     if response.status_code == 200:
         return response.json()["data"]
     else:
-        print(f"Status code: {response.status_code}- Could not retrieve supporters")
+        print(f"Status code: {response.status_code}- Could not retrieve supporters.")
         return []
 
 def get_donations():
@@ -16,7 +16,7 @@ def get_donations():
     if response.status_code == 200:
         return response.json()["data"]
     else:
-        print(f"Status code: {response.status_code}- Could not retrieve donations")
+        print(f"Status code: {response.status_code}- Could not retrieve donations.")
         return []
 
 def calculate_supporters_total_value(supporter_id, donations):
@@ -44,7 +44,7 @@ def post_export():
         print("Export successful.")
         return export_id
     else:
-        print(f"Status code: {response.status_code}- Export failed")
+        print(f"Status code: {response.status_code}- Export failed.")
         return None
 
 
@@ -60,7 +60,7 @@ def check_export(export_id):
             print("Export pending.")
             return False
     else:
-        print(f"Status code: {response.status_code}- Checking export status failed")
+        print(f"Status code: {response.status_code}- Checking export status failed.")
         return False
 
 
@@ -72,5 +72,5 @@ def combine_donations(export_url, donations):
         donations.extend(export_donations)
         print("Export data added to donations.")
     else:
-        print(f"Status code: {response.status_code}- pulling export data failed")
+        print(f"Status code: {response.status_code}- pulling export data failed.")
 
